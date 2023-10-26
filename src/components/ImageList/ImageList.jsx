@@ -21,6 +21,7 @@ export const ImageList = () => {
           imgSrc={img.imgSrc}
           createdAt={img.createdAt}
           altDescription={img.altDescription}
+          description={img.description}
         />
       ))}
     </ImageListWrapper>

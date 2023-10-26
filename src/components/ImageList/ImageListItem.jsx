@@ -49,8 +49,17 @@ const StyledDeleteIcon = styled(DeleteIcon)`
   outline: none;
 `;
 
+const Description = styled.p`
+  margin-bottom: 1rem;
+
+  & span {
+    color: var(--color-grey-500);
+    margin-right: 0.5rem;
+  }
+`;
+
 export const ImageListItem = memo(
-  ({ id, title, imgSrc, createdAt, altDescription }) => {
+  ({ id, title, imgSrc, createdAt, altDescription, description }) => {
     const { dispatch } = useImages();
 
     const handleDeleteCard = () => {
@@ -64,6 +73,12 @@ export const ImageListItem = memo(
           <span>Дата создания:</span>
           {createdAt}
         </Date>
+        {description && (
+          <Description>
+            <span>Описание:</span>
+            {description}
+          </Description>
+        )}
         <Image src={imgSrc} alt={altDescription} />
         <StyledDeleteButton $variation="clear" onClick={handleDeleteCard}>
           <StyledDeleteIcon />

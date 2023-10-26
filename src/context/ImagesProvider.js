@@ -76,8 +76,6 @@ export function ImagesProvider({ children }) {
         return res.json();
       })
       .then((data) => {
-        console.log(data);
-
         if (data) {
           dispatch({ type: 'DataReceived', payload: data });
         } else {

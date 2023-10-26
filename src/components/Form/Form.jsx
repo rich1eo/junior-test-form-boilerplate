@@ -35,6 +35,8 @@ export const Form = () => {
         title: data.title,
         imgSrc: data.url,
         createdAt: getLocalDateString(new Date()),
+        description: data.description,
+        altDescription: data.description,
       },
     });
 

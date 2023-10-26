@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
 export const ImageListWrapper = styled.div`
-  background-color: red;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2rem;
 `;

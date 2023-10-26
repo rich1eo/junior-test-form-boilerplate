@@ -15,12 +15,13 @@ const initialState = {
 function reducer(state, action) {
   switch (action.type) {
     case 'DataReceived':
-      const images = action.payload.map((images) => {
+      const images = action.payload.map((image) => {
         return {
-          id: images.id,
-          title: images.description,
-          imgSrc: images.urls.small,
-          createdAt: getLocalDateString(new Date(images.created_at)),
+          id: image.id,
+          title: image.description,
+          imgSrc: image.urls.small,
+          createdAt: getLocalDateString(new Date(image.created_at)),
+          altDescription: image.alt_description,
         };
       });
 
@@ -75,6 +76,8 @@ export function ImagesProvider({ children }) {
         return res.json();
       })
       .then((data) => {
+        console.log(data);
+
         if (data) {
           dispatch({ type: 'DataReceived', payload: data });
         } else {

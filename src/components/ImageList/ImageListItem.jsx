@@ -49,24 +49,26 @@ const StyledDeleteIcon = styled(DeleteIcon)`
   outline: none;
 `;
 
-export const ImageListItem = memo(({ id, title, imgSrc, createdAt }) => {
-  const { dispatch } = useImages();
+export const ImageListItem = memo(
+  ({ id, title, imgSrc, createdAt, altDescription }) => {
+    const { dispatch } = useImages();
 
-  const handleDeleteCard = () => {
-    dispatch({ type: 'DeleteImage', payload: id });
-  };
+    const handleDeleteCard = () => {
+      dispatch({ type: 'DeleteImage', payload: id });
+    };
 
-  return (
-    <StyledImageListItem>
-      <Title>{title || 'Название отсутствует'}</Title>
-      <Date>
-        <span>Дата создания:</span>
-        {createdAt}
-      </Date>
-      <Image src={imgSrc} />
-      <StyledDeleteButton $variation="clear" onClick={handleDeleteCard}>
-        <StyledDeleteIcon />
-      </StyledDeleteButton>
-    </StyledImageListItem>
-  );
-});
+    return (
+      <StyledImageListItem>
+        <Title>{title || 'Название отсутствует'}</Title>
+        <Date>
+          <span>Дата создания:</span>
+          {createdAt}
+        </Date>
+        <Image src={imgSrc} alt={altDescription} />
+        <StyledDeleteButton $variation="clear" onClick={handleDeleteCard}>
+          <StyledDeleteIcon />
+        </StyledDeleteButton>
+      </StyledImageListItem>
+    );
+  },
+);

@@ -41,6 +41,9 @@ export const Input = styled.input`
     props.$error &&
     css`
       border: 1px solid var(--color-red-700);
+      &::placeholder {
+        color: var(--color-red-500);
+      }
     `}
 
   &:disabled {

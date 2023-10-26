@@ -27,7 +27,7 @@ export const getError = (errorCode) => {
       return 'Ошибка на сервере';
 
     default:
-      return 'Произошла непредвидимая ошибка';
+      return 'Произошла непредвиденная ошибка';
   }
 };
 

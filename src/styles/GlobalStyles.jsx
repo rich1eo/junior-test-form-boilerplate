@@ -66,7 +66,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;;
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
     color: var(--color-grey-700);
 
     transition: color 0.3s, background-color 0.3s;

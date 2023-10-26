@@ -62,5 +62,3 @@ export const Actions = styled.div`
 export const SubmitButton = styled(Button)`
   margin-left: auto;
 `;
-
-export const Checkbox = styled;

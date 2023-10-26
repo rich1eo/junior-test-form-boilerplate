@@ -3,8 +3,8 @@ import { useState } from 'react';
 
 import { useImages } from '../../hooks/useImages';
 import { checkIfImageExists, getLocalDateString } from '../../utils/helpers';
-import Checkbox from '../Checkbox/Checkbox';
-import Textarea from '../TextArea/TextArea';
+import { Checkbox } from '../Checkbox';
+import { Textarea } from '../TextArea';
 
 import {
   Actions,
